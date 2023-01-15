@@ -5,6 +5,8 @@
 // drop down list of locations
 // 
 
+require('dotenv').config();
+
 const kelvin_to_celcius = -273.15;
 const express = require('express');
 const cors = require('cors'); // remove?
@@ -16,9 +18,9 @@ const port = process.env.port || 8080;
 
 const initialize = function () {
     return new Promise((resolve, reject) => {
-        const apikey = '8b0c251a466caaefbf85da31bb32aeb4';
-        const location = 'Toronto,CA';
-        const api = 'https://api.openweathermap.org/data/2.5/weather?q=' + location + '&APPID=' + apikey;
+        let apikey = process.env.API_KEY;
+        let location = 'Toronto,CA';
+        let api = 'https://api.openweathermap.org/data/2.5/weather?q=' + location + '&APPID=' + apikey;
 
         fetch(api)
         .then((response) => {return response.json()})
@@ -41,6 +43,7 @@ const initialize = function () {
 
             // test log -> object extraction
             console.log(relevantObject.temperature.valueOf());
+            console.log(relevantObject.feels_like.valueOf());
             
             
         })

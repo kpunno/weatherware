@@ -25,7 +25,7 @@ const port = process.env.port || 8080;
 
 const getData = function () {
     return new Promise((resolve, reject) => {
-        let apikey = '8b0c251a466caaefbf85da31bb32aeb4';
+        let apikey = process.env.API_KEY;
         let location = 'Toronto,CA';
         let api = 'https://api.openweathermap.org/data/2.5/weather?q=' + location + '&APPID=' + apikey;
 

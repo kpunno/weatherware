@@ -1,22 +1,29 @@
-
-
-
 //
 // drop down list of locations
 // 
 
 require('dotenv').config();
 
-const kelvin_to_celcius = -273.15;
 const express = require('express');
 const cors = require('cors'); // remove?
 const bodyparser = require('body-parser');
 const path = require('path');
+const handlebars = require('express-handlebars');
 
+// conversion (temporarily unmodifiable)
+const kelvin_to_celcius = -273.15;
+
+// express / handlebars config
 const app = express();
+app.set('view engine', 'hbs');
+app.engine('hbs', handlebars.engine({
+    extname: '.hbs'
+}));
+app.use(express.static('public'));
+
 const port = process.env.port || 8080;
 
-const initialize = function () {
+const getData = function () {
     return new Promise((resolve, reject) => {
         let apikey = process.env.API_KEY;
         let location = 'Toronto,CA';
@@ -29,29 +36,22 @@ const initialize = function () {
             reject();
         })
         .then((data) => {
-            console.log(data);
-
             // contains relevant weather information
-            relevantObject = {
-                temperature : data.main.temp + kelvin_to_celcius,
-                feels_like : data.main.feels_like + kelvin_to_celcius,
+            displayData = {
+                temperature : Math.round(data.main.temp + kelvin_to_celcius),
+                feels_like : Math.round(data.main.feels_like + kelvin_to_celcius),
                 wind_speed : data.wind.speed,
                 wind_gust : data.wind.gust,
                 overall : data.weather[0].main,
                 description : data.weather[0].description
             }
 
-            // test log -> object extraction
-            console.log(relevantObject.temperature.valueOf());
-            console.log(relevantObject.feels_like.valueOf());
-            
-            
+            resolve(displayData);
         })
         .catch((err) => {
             console.log('data was not fetched correctly' + err);
             reject();
         })
-        .then(resolve());
     });
 }
 
@@ -60,7 +60,10 @@ app.use(bodyparser.json());
 
 // get default route and send json data (simple message)
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    getData().then((data)=>{
+        res.render('index', {data: data});
+    })
+    
 });
 
 app.get('/whatwear', (req,res) => {
@@ -74,7 +77,7 @@ app.use((req, res) => {
 
 
 // initialize server (listening)
-initialize().then(() => {
+getData().then(() => {
     app.listen(port, () => {
         console.log('HTTP server is listening...')
     });

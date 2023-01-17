@@ -19,7 +19,7 @@ app.engine('hbs', handlebars.engine({
     extname: '.hbs'
 }));
 
-app.use(express.static('images'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 const port = process.env.port || 8080;
 
@@ -37,7 +37,11 @@ const getData = function () {
         })
         .then((data) => {
             // contains relevant weather information
+            let date = new Date().toDateString();
+            let time = new Date().toTimeString();
             displayData = {
+                date: date,
+                time : time,
                 temperature : Math.round(data.main.temp + kelvin_to_celcius),
                 feels_like : Math.round(data.main.feels_like + kelvin_to_celcius),
                 wind_speed : data.wind.speed,
@@ -45,7 +49,7 @@ const getData = function () {
                 overall : data.weather[0].main,
                 description : data.weather[0].description
             }
-
+            console.log(displayData.time);
             resolve(displayData);
         })
         .catch((err) => {

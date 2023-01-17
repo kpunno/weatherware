@@ -1,4 +1,4 @@
 - [ ] location selection
-- [ ] icon imports
+- [x] icon imports
 - [ ] module organization
 - [ ] complete readme

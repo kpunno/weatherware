@@ -9,7 +9,6 @@ const cors = require('cors'); // remove?
 const bodyparser = require('body-parser');
 const path = require('path');
 const handlebars = require('express-handlebars');
-
 // conversion (temporarily unmodifiable)
 const kelvin_to_celcius = -273.15;
 
@@ -19,7 +18,8 @@ app.set('view engine', 'hbs');
 app.engine('hbs', handlebars.engine({
     extname: '.hbs'
 }));
-app.use(express.static('public'));
+
+app.use(express.static('images'));
 
 const port = process.env.port || 8080;
 
@@ -63,11 +63,14 @@ app.get('/', (req, res) => {
     getData().then((data)=>{
         res.render('index', {data: data});
     })
-    
 });
 
 app.get('/whatwear', (req,res) => {
     res.send('./whatwear route is working!');
+});
+
+app.get('/credits', (req, res) => {
+    res.render('credits');
 });
 
 app.use((req, res) => {

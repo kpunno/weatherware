@@ -1,6 +1,6 @@
 - [ ] location selection
 - [x] icon imports
-- [ ] module organization
+- [x] module organization
 - [ ] complete readme
 - [ ] dynamic display of icons
 - [ ] dynamic display of weather

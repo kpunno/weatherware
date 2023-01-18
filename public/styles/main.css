@@ -1,4 +1,36 @@
 img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.clothing {
     height: 64px;
     width: 64px;
+}
+
+.underwear {
+    height: 80px;
+    width: 80px;
+}
+
+.clothing-table {
+    border: 2px solid;
+}
+
+td, tr, th {
+    height: 100px;
+    width: 100px;
+    border: 2px solid;
+    
+}
+
+th {
+    color: red;
+}
+
+.pants {
+    width: 80px;
+    height: 80px;
 }

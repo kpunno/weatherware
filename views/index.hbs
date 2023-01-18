@@ -15,17 +15,36 @@
     </div>
     <p>The time is {{data.time}}, on {{data.date}}</p>
     <p>The temperature in Toronto is {{data.temperature}}, but it <i>feels</i> like {{data.feels_like}}</p>
-    <div>
-        <img src="images/beanie-01.png">
-    </div>
-    <div>
-        <img src="images/sweater-01.png">
-    </div>
-    <div>
-        <img src="images/pants-01.png">
-    </div>
-    <div>
-        <img src="images/shoes-01.png">
-    </div>
+
+
+    <table class="clothing-table">
+        <thead>
+            <th>outer</th>
+            <th>inner</th>
+            <th>accessory</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img class="clothing" src="images/beanie-01.png"></td>
+                <td>two</td>
+                <td>three</td>
+            </tr>
+            <tr>
+                <td><img class="clothing" src="images/sweater-01.png"></td>
+                <td>two</td>
+                <td>three</td>
+            </tr>
+            <tr>
+                <td><img class="pants" src="images/pants-01.png"></td>
+                <td><img class="underwear" src="images/underwear-01.png"></td>
+                <td>three</td>
+            </tr>
+            <tr>
+                <td><img class="clothing" src="images/boots-01.png"></td>
+                <td>two</td>
+                <td>three</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>

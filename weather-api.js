@@ -51,3 +51,7 @@ module.exports.getData = function () {
 // 2 -> temperature
 // 3 -> size ?
 // 4 -> 
+
+
+// for each {{clothing}} render {{clothing.URL}}
+// accomplish this

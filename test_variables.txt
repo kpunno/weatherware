@@ -1,3 +1,0 @@
-api url ... check all data ...
-
-http://api.openweathermap.org/data/2.5/weather?q=toronto,CA&APPID=8b0c251a466caaefbf85da31bb32aeb4

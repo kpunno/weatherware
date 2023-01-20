@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const SKIP_FETCH = true; // when designing 
+const SKIP_FETCH = false; // when designing 
 const kelvin_to_celcius = -273.15;
 
 module.exports.getData = function () {
@@ -22,11 +22,8 @@ module.exports.getData = function () {
                 })
                 .then((data) => {
                     // contains relevant weather information
-                    let date = new Date().toDateString();
-                    let time = new Date().toTimeString();
-                    displayData = {
-                        date: date,
-                        time: time,
+
+                    weatherData = {
                         temperature: Math.round(data.main.temp + kelvin_to_celcius),
                         feels_like: Math.round(data.main.feels_like + kelvin_to_celcius),
                         wind_speed: data.wind.speed,
@@ -34,8 +31,8 @@ module.exports.getData = function () {
                         overall: data.weather[0].main,
                         description: data.weather[0].description
                     }
-                    console.log(displayData.time);
-                    resolve(displayData);
+                    
+                    resolve(weatherData);
                 })
                 .catch((err) => {
                     console.log('data was not fetched correctly' + err);
@@ -45,6 +42,7 @@ module.exports.getData = function () {
         });
     }
 }
+
 //
 // clothing objects properties
 // 1 -> name

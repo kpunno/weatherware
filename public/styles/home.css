@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+p, h2, table {
+    font-family: 'Libre Baskerville', serif;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.clothing {
+    height: 64px;
+    width: 64px;
+}
+
+.underwear {
+    height: 80px;
+    width: 80px;
+}
+
+.clothing-table {
+    border: 2px solid;
+}
+
+td, tr, th {
+    color:grey;
+    height: 100px;
+    width: 120px;
+    border: 2px solid;
+    text-align: center;
+}
+
+th {
+    color: rgb(42, 42, 42);
+}
+
+.pants {
+    width: 80px;
+    height: 80px;
+}
+
+.container {
+    background-color: whitesmoke;
+}

@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/home.css" />
     <title>tester html</title>
-    
+
     <!-- include icon credits -->
 </head>
+
 <body>
-    <div class="navbar">
-        <a href="/credits">credits</a>
+    <div class="container">
+        <h3>The temperature in Toronto is {{data.temperature}}, but it <i>feels</i> like {{data.feels_like}}</h3>
+        <h4>Here's what to wear today ...</h4>
+        <table class="clothing-table">
+            <thead>
+                <th>outer</th>
+                <th>inner</th>
+                <th>accessory</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img class="clothing" src="images/beanie-01.png"></td>
+                    <td>two</td>
+                    <td>three</td>
+                </tr>
+                <tr>
+                    <td><img class="clothing" src="images/sweater-01.png"></td>
+                    <td>two</td>
+                    <td>three</td>
+                </tr>
+                <tr>
+                    <td><img class="pants" src="images/pants-01.png"></td>
+                    <td><img class="underwear" src="images/underwear-01.png"></td>
+                    <td>three</td>
+                </tr>
+                <tr>
+                    <td><img class="clothing" src="images/boots-01.png"></td>
+                    <td>two</td>
+                    <td>three</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <p>The time is {{data.time}}, on {{data.date}}</p>
-    <p>The temperature in Toronto is {{data.temperature}}, but it <i>feels</i> like {{data.feels_like}}</p>
-
-
-    <table class="clothing-table">
-        <thead>
-            <th>outer</th>
-            <th>inner</th>
-            <th>accessory</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img class="clothing" src="images/beanie-01.png"></td>
-                <td>two</td>
-                <td>three</td>
-            </tr>
-            <tr>
-                <td><img class="clothing" src="images/sweater-01.png"></td>
-                <td>two</td>
-                <td>three</td>
-            </tr>
-            <tr>
-                <td><img class="pants" src="images/pants-01.png"></td>
-                <td><img class="underwear" src="images/underwear-01.png"></td>
-                <td>three</td>
-            </tr>
-            <tr>
-                <td><img class="clothing" src="images/boots-01.png"></td>
-                <td>two</td>
-                <td>three</td>
-            </tr>
-        </tbody>
-    </table>
 </body>
+
 </html>

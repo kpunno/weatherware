@@ -1,36 +1,18 @@
-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+div {
+    padding: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif
 }
 
-.clothing {
-    height: 64px;
-    width: 64px;
+.main-nav {
+    border:2px solid;
+    border-color: rgb(149, 138, 138);
+    display: flex;
+    flex-basis: auto;
+    background-color: rgb(230, 230, 230);
 }
 
-.underwear {
-    height: 80px;
-    width: 80px;
-}
-
-.clothing-table {
-    border: 2px solid;
-}
-
-td, tr, th {
-    height: 100px;
-    width: 100px;
-    border: 2px solid;
-    
-}
-
-th {
-    color: red;
-}
-
-.pants {
-    width: 80px;
-    height: 80px;
+.clock {
+    margin-right: 0px;
 }

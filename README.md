@@ -1,4 +1,4 @@
-- [ ] location selection
+- [ ] location selection (fetch cities)
 - [x] icon imports
 - [x] module organization
 - [ ] complete readme
